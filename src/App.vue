@@ -1,27 +1,27 @@
 
 <script>
 // Facciamo l'import dei componenti che utilizzaremo all'interno del template
-import Header from "./components/Header.vue"
+// import Header from "./components/Header.vue"
 import Main from "./components/Main.vue"
-import Footer from "./components/Footer.vue"
+// import Footer from "./components/Footer.vue"
 
 export default {
   name:'App',
   components:{
-    Header,
+    // Header,
     Main,
-    Footer
+    // Footer
   }
 }
 </script>
 <template>
-  <h1>APP</h1>
+  <!-- <h1>APP</h1> -->
 
-  <Header />
+  <!-- <Header /> -->
 
   <Main />
 
-  <Footer />
+  <!-- <Footer /> -->
 
   
 </template>

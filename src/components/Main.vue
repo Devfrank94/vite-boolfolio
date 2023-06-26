@@ -1,16 +1,43 @@
 <script>
+
+import { store } from '../data/store.js';
+import axios from 'axios';
+
+
 export default {
   name:'Main',
-  data(){
-    return {
+  // data(){
+  //   return {
     
+  //   }
+  // },
+
+    methods:{
+      getApi(){
+        axios.get(store.apiUrl + 'projects')
+          .then(results =>{
+
+            console.log(results.data);
+          })
+      }
+
+
+    },
+
+    mounted(){
+      this.getApi();
     }
-  },
+
+  
 }
 
 </script>
 <template>
-  <h1>Main</h1>
+
+  <div class="container my-5">
+    <h1>Main</h1>
+
+  </div>
 
 
   
@@ -20,5 +47,7 @@ export default {
 <style lang="scss" scoped>
 
   @use '../scss/main.scss' as *;
+
+
 
 </style>
