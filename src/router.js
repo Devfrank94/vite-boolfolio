@@ -1,15 +1,41 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-const route = createRouter({
+import Home from './components/pages/Home.vue'
+import Projects from './components/pages/Projects.vue'
+import Contacts from './components/pages/Contacts.vue'
+
+const router = createRouter({
 
   history: createWebHistory(),
 
   routes:[
     {
       path: '/',
-      name: 'home'
-      
+      name: 'home',
+      component: Home
+    },
+    {
+      path: '/projects',
+      name: 'projects',
+      component: Projects
+    },
+    {
+      path: '/contacts',
+      name: 'contacts',
+      component: Contacts
+    },
+
+    //rotta per 404
+
+    { 
+      path: '/:pathMatch(.*)*', 
+      component: Error404 
     }
+
+
+
   ]
 
 })
+
+export { router }
