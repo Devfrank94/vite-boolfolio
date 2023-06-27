@@ -13,7 +13,9 @@ export default {
 
   data(){
     return {
-      projects:[]
+      projects:[],
+      // links:[],
+      // currentPage: null,
     }
   },
 
@@ -22,6 +24,8 @@ export default {
         axios.get(store.apiUrl + 'projects')
           .then(results =>{
             this.projects = results.data;
+            // this.links = results.data.links;
+            // this.currentPage = results.data.current_page;
             console.log(results.data);
           })
       }
@@ -48,10 +52,22 @@ export default {
       :description="project.description"
       :image="project.image"
       :date="project.date"
+      :type="project.type.name"
+      :tecnologies="project.tecnologies"
       />
-
   </div>
 
+  <!-- TODO: Button Paginatation -->
+  <div>
+    <!-- <button
+      v-for="(link, index) in links"
+      :key="index"
+      v-html="link.label"
+      @click="getApi(link.url)"
+      :disabled="link == currentPage || !link.url"
+      ></button> -->
+
+  </div>
 
   
 </template>
@@ -61,6 +77,11 @@ export default {
 
   @use '../../scss/main.scss' as *;
 
-
+// button{
+//   padding: 5px 10px;
+//   border: none;
+//   border-radius: 5px;
+//   margin-right: 3px;
+// }
 
 </style>

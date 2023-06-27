@@ -7,6 +7,8 @@ export default {
     description: String,
     image:String,
     date:String,
+    type: String,
+    tecnologies: Array,
 
   }
 
@@ -25,8 +27,16 @@ export default {
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Data: {{date}}</li>
+      <li class="list-group-item">
+        <span class="badge text-bg-primary p-2">Tipo: {{type}}</span>
+        <span class="badge text-bg-primary p-2" v-if="!type.length"> N/D </span>
+      </li>
+      <li class="list-group-item">
+        <span class="badge text-bg-warning p-2 me-2" v-for="tecnology in tecnologies" :key="tecnology.id" >{{tecnology.name}}</span>
+        <span class="badge text-bg-warning p-2 me-2" v-if="!tecnologies.length"> N/D </span>
+      </li>
     </ul>
-</div>
+  </div>
 
   
 </template>
