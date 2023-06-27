@@ -29,3 +29,9 @@ Stampiamo in console i risultati e verifichiamo di ricevere i dati correttamente
 **Milestone 5**
 
 Creiamo un nuovo componente ProjectCard, che corrisponde ad una card per visualizzare un progetto. Utilizziamo questo componente per visualizzare tutti i progetti ricevuti tramite API.
+
+**Milestone del 27/06**
+
+Aggiungete il router a Vue e inserite  un menu di navigazione fra le pagine.
+Solo una delle pagine farà la chiamata axios per stampare il portfolio.
+Aggiungete un elenco di  bottoni per i tipi  e le tecnologie, Questi bottoni verranno stampati a seguito di chiamate axios dedicate.
