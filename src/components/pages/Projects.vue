@@ -54,6 +54,7 @@ export default {
       :date="project.date"
       :type="project.type.name"
       :tecnologies="project.tecnologies"
+      :slug="project.slug"
       />
   </div>
 

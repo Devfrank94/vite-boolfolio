@@ -4,6 +4,7 @@ import Home from './components/pages/Home.vue'
 import Projects from './components/pages/Projects.vue'
 import Contacts from './components/pages/Contacts.vue'
 import Error404 from './components/pages/Error404.vue'
+import ProjectDetail from './components/pages/ProjectDetail.vue'
 
 const router = createRouter({
 
@@ -25,6 +26,11 @@ const router = createRouter({
       path: '/contacts',
       name: 'contacts',
       component: Contacts
+    },
+    {
+      path: '/detail-project/:slug',
+      name: 'detail-project',
+      component: ProjectDetail
     },
 
     //rotta per 404

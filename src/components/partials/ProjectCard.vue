@@ -9,7 +9,7 @@ export default {
     date:String,
     type: String,
     tecnologies: Array,
-
+    slug: String,
   }
 
   
@@ -34,6 +34,9 @@ export default {
       <li class="list-group-item">
         <span class="badge text-bg-warning p-2 me-2" v-for="tecnology in tecnologies" :key="tecnology.id" >{{tecnology.name}}</span>
         <span class="badge text-bg-warning p-2 me-2" v-if="!tecnologies.length"> N/D </span>
+      </li>
+      <li class="list-group-item">
+        <router-link :to="{ name: 'detail-project', params: { slug: slug } }">More Info</router-link>
       </li>
     </ul>
   </div>
