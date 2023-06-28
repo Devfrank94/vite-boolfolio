@@ -7,62 +7,65 @@ export default {
     name:"ProjectDetail",
 
     components:{
-        Loader
+      Loader
     },
 
     data(){
         return{
             project: null,
-            loaded:false
+            loaded:false,
+            tecnologies:[]
         }
     },
 
     methods:{
         getApi(){
-            this.loaded = false;
-            axios.get(store.apiUrl + 'projects' + this.$route.params.slug)
+          this.loaded = false;
+            axios.get(store.apiUrl + 'projects/detail-project/' + this.$route.params.slug)
                 .then(results =>{
                     this.project = results.data;
                     this.loaded = true;
-                })
+                    console.log(this.project);
+                  })
         },
 
     },
 
     mounted(){
-        this.getApi();
+      this.getApi()
     }
 }
 </script>
 
 <template>
-    <div class="page-wrapper">
-        
-        <div v-if="loaded" class="wrapper">
-            <h2>{{ this.$route.params.slug }}</h2>
-            <!-- <div>
-                <img :src="project.image_path" :alt="project.image_original_name">
-            </div> -->
-            <!-- <h5 class="mt-3">Type -> {{ project.type }}</h5>
-            <div class="mt-3">
-                <span class="pe-4">Kind of work:</span>
-                <span class="badge text-bg-primary">{{ project.kind.name }}</span>
-            </div>
-            <div class="my-3">
-                <span class="me-3">Technologies used:</span>
-                <span v-for="(name,index) in project.technologies" :key="index">
-                    
-                </span>
-            </div>
-            <span>Description:</span>
-            <p v-html="project.description"></p>
-            <div>
-                <span>Project data: </span>
-                <span>{{ project.data }}</span>
-            </div> -->
+
+<Loader v-if="!loaded"/>
+
+<div v-else>
+  <h3 class="my-5">Dettaglio Progetto</h3>
+  <div class="card mx-2 my-3" style="w-75">
+    <div class="card-body h-50 d-flex gap-3">
+        <img :src=  project.image class="w-25">
+        <div>
+          <h5 class="card-title">{{project.title}}</h5>
+          <p class="card-text h-25">{{project.description}}</p>
+
         </div>
-        <Loader v-else/>
-    </div>
+      </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Data: {{project.date}}</li>
+          <li class="list-group-item">
+            <span>Tipo: </span>
+            <span class="badge text-bg-primary p-2">{{project.type.name}}</span>
+          </li>
+          <li class="list-group-item">
+            <span>Tecnologie: </span>
+            <span class="badge text-bg-warning p-2 me-2" v-for="tecnology in project.tecnologies" :key="tecnology.id">{{ tecnology.name }} </span>
+          </li>
+        </ul>
+      </div>
+</div>
+
 </template>
 
 
