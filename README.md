@@ -35,3 +35,7 @@ Creiamo un nuovo componente ProjectCard, che corrisponde ad una card per visuali
 Aggiungete il router a Vue e inserite  un menu di navigazione fra le pagine.
 Solo una delle pagine farà la chiamata axios per stampare il portfolio.
 Aggiungete un elenco di  bottoni per i tipi  e le tecnologie, Questi bottoni verranno stampati a seguito di chiamate axios dedicate.
+
+**Milestone del 28/06**
+
+Aggiungete alla navigazione con Vue anche la rotta che accetta lo slug come parametro dinamico e la relativa API del dettaglio dell’elemento cliccato
