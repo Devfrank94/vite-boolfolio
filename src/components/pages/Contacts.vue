@@ -1,9 +1,12 @@
 <script>
-
+import ContactForm from '../partials/ContactForm.vue'
 
 
 export default {
   name:'Contacts',
+  components:{
+    ContactForm
+  }
 
 
 }
@@ -12,7 +15,10 @@ export default {
 <template>
 
   
-<h1>Contacts</h1>
+<h1>Invia una mail al Dev</h1>
+
+
+<ContactForm/>
 
 
 
