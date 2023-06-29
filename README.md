@@ -39,3 +39,9 @@ Aggiungete un elenco di  bottoni per i tipi  e le tecnologie, Questi bottoni ver
 **Milestone del 28/06**
 
 Aggiungete alla navigazione con Vue anche la rotta che accetta lo slug come parametro dinamico e la relativa API del dettaglio dell’elemento cliccato
+
+**Milestone del 29/06/2023**
+
+Riprodurre tutto il flusso dell’invio della email dal form della pagina di contatti.
+Registrarsi a mailtrap.io e configurate correttamente il progetto.
+Gestite il feedback da dare all’utente (success/errori) tramite API.
